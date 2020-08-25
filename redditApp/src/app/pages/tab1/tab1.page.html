@@ -1,0 +1,34 @@
+<ion-header no-border>
+    <ion-toolbar color="reddit">
+        <div class="barSearch animated fade fadeInDown">
+            <ion-searchbar placeholder="Buscar..." cancelButtonText="Cancelar" (ionChange)="showSearchFilterBar( $event ) " showCancelButton="always"></ion-searchbar>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col *ngFor="let post of posts | filter: textFilter: 'selftext' ">
+                <ion-card size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+                    <ion-card-header>
+                        <ion-card-subtitle>
+                            {{ post.data.author }}
+                        </ion-card-subtitle>
+                    </ion-card-header>
+
+                    <ion-img *ngIf="post.data.thumbnail" [src]="post.data.thumbnail"></ion-img>
+
+                    <ion-card-content>
+                        <p>
+                            {{ post.data.title }}
+                        </p>
+                    </ion-card-content>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

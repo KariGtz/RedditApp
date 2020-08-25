@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Filtrar por Personaje
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Filtrar por Personaje</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-list>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('frodo')">Frodo</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('bilbo')">Bilbo</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('samsagaz', 'sam')">Samsagaz - Sam</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('meriadoc', 'merry')">Meriadoc - Merry</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('peregrin', 'pippin')">Peregrin - Pippin</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label (click)="displayListHobbits('gollum', 'smeagol')">Gollum - Smeagol</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-grid fixed *ngIf="arrayHobbit">
+        <ion-row>
+            <ion-col *ngFor="let post of arrayHobbit">
+                <ion-card size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+                    <ion-card-header>
+                        <ion-card-subtitle>
+                            <ion-icon name="heart"></ion-icon>
+                            {{ post.data.score }}
+                        </ion-card-subtitle>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <p>
+                            {{ post.data.title }}
+                        </p>
+                    </ion-card-content>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
