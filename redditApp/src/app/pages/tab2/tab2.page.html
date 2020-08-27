@@ -14,33 +14,56 @@
     </ion-header>
 
     <ion-list>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('frodo')">Frodo</ion-label>
+        <ion-item (click)="displayListHobbits('frodo')">
+            <ion-label>Frodo</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('bilbo')">Bilbo</ion-label>
+        <ion-item (click)="displayListHobbits('bilbo')">
+            <ion-label>Bilbo</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('samsagaz', 'sam')">Samsagaz - Sam</ion-label>
+        <ion-item (click)="displayListHobbits('samsagaz', 'sam')">
+            <ion-label>Samsagaz - Sam</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('meriadoc', 'merry')">Meriadoc - Merry</ion-label>
+        <ion-item (click)="displayListHobbits('meriadoc', 'merry')">
+            <ion-label>Meriadoc - Merry</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('peregrin', 'pippin')">Peregrin - Pippin</ion-label>
+        <ion-item (click)="displayListHobbits('peregrin', 'pippin')">
+            <ion-label>Peregrin - Pippin</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label (click)="displayListHobbits('gollum', 'smeagol')">Gollum - Smeagol</ion-label>
+        <ion-item (click)="displayListHobbits('gollum', 'smeagol')">
+            <ion-label>Gollum - Smeagol</ion-label>
+            <ion-button>Ver posts</ion-button>
         </ion-item>
     </ion-list>
 
     <ion-item>
         <ion-button (click)="groupPostHobbits()">Post agrupados JSON</ion-button>
+        <ion-label>
+            <p><small>ver resultados en consola.</small></p>
+        </ion-label>
     </ion-item>
 
     <ion-item>
         <ion-button (click)="hobbitMorePosts()">Hobbit con más Posts</ion-button>
+        <ion-label>
+            <p><small>ver resultados en consola.</small></p>
+        </ion-label>
     </ion-item>
+
+    <ion-item *ngIf="winner !== ''">
+        <p>{{winner}}</p>
+    </ion-item>
+
+    <!-- <ion-item *ngIf="winner !== ''">
+        <ion-button color="reddit">
+            <ion-label>Votar por post más popular</ion-label>
+            <ion-icon name="arrow-up" color="light"></ion-icon>
+        </ion-button>
+    </ion-item> -->
 
     <ion-grid fixed *ngIf="arrayHobbit">
         <ion-row>
